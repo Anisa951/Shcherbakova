@@ -30,3 +30,15 @@ with open("diary.txt", "r") as file:
     content = file.read()
     print("Содержимое дневника: ")
     print(content)
+
+# Задача 3 (Работа с файлами)
+# Создайте текстовый файл cities.txt и запишите в него названия трёх любых городов, каждое с новой строки. Файл должен быть создан и заполнен в коде, а не вручную.
+# Затем напишите программу, которая открывает этот файл и выводит на экран только первую строку из него (название первого города).
+
+with open("cities.txt", "w") as file:
+    file.write("Санкт-Петербург\n")
+    file.write("Сеул\n")
+    file.write("Шанхай")
+with open("cities.txt", "r") as file:
+    content = file.readline()
+print(content.strip())
