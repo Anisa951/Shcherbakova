@@ -449,3 +449,56 @@ person_1.info()
 person_2.info()
 person_3.info()
 print(Player.total_players)
+
+
+# Задача 15
+# Создай класс Lamp (лампа).
+#
+# У лампы должны быть:
+#
+# индивидуальные атрибуты: color (цвет света) и is_on = False (выключена по умолчанию)
+# общий атрибут lamp_count = 0 (сколько всего ламп создано)
+#
+# При создании каждой новой лампы общий атрибут должен увеличиваться на 1.
+#
+# Реализуй методы:
+#
+# turn_on() — включает лампу (is_on = True).
+# turn_off() — выключает лампу (is_on = False).
+# info() — выводит информацию в формате:
+# "Лампа [цвет], статус: [вкл/выкл]"
+#
+# Создай три лампы с разными цветами.
+#
+# Выполни действия:
+# Включи первую лампу.
+# Выключи вторую лампу (она и так выключена, но метод должен работать).
+# Включи третью лампу.
+# Выведи информацию о всех лампах.
+# Выведи общее количество созданных ламп.
+
+class Lamp:
+    lamp_count = 0
+    def __init__(self, color, is_on = False):
+        self.color = color
+        self.is_on = is_on
+        Lamp.lamp_count += 1
+
+    def turn_on(self):
+        self.is_on = True
+    def turn_off(self):
+        self.is_on = False
+    def info(self):
+        print(f"Лампа {self.color}, статус: {'вкл' if self.is_on else 'выкл'}")
+
+lamp_1 = Lamp(color="R")
+lamp_2 = Lamp(color="G")
+lamp_3 = Lamp(color="A")
+
+lamp_1.turn_on()
+lamp_2.turn_off()
+lamp_3.turn_on()
+lamp_1.info()
+lamp_2.info()
+lamp_3.info()
+print(Lamp.lamp_count)
