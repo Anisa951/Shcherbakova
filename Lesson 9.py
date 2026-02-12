@@ -403,3 +403,49 @@ book_1 = Book(title= "Атака титанов1", author= "Исаяма", year=
 book_2 = Book(title= "Наруто", author= "Кишимото", year= 1998)
 book_1.info()
 book_2.info()
+
+
+# Задача 14
+# Создай класс Player (игрок).
+#
+# У игрока должны быть:
+# индивидуальные атрибуты: nickname (никнейм) и level (уровень, по умолчанию 1)
+# общий атрибут total_players = 0 (сколько всего игроков создано)
+# При создании каждого нового игрока общий атрибут должен увеличиваться на 1.
+#
+# Реализуй методы:
+#
+# level_up() — увеличивает уровень игрока на 1.
+#
+# info() — выводит информацию:
+# "Игрок: [никнейм], уровень: [уровень]"
+#
+# Создай трёх игроков с разными никнеймами и разными начальными уровнями (у кого-то уровень по умолчанию, у кого-то задан).
+#
+# Выполни действия:
+# Повысь уровень второго игрока два раза.
+# Выведи информацию о всех игроках.
+# Выведи общее количество созданных игроков.
+
+class Player:
+    total_players = 0
+    def __init__(self, nickname, level = 1):
+        self.nickname = nickname
+        self.level = level
+        Player.total_players += 1
+    def level_up(self):
+        self.level += 1
+
+    def info(self):
+        print(f"Игрок: {self.nickname}, уровень: {self.level}")
+
+person_1 = Player(nickname="Нонейм", level=1)
+person_2 = Player(nickname="Друг2", level=50)
+person_3 = Player(nickname="Злодей", level=100)
+
+person_2.level_up()
+person_2.level_up()
+person_1.info()
+person_2.info()
+person_3.info()
+print(Player.total_players)
