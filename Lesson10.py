@@ -6,6 +6,8 @@
 # Они должны наследовать от Animal и переопределять метод speak().
 # В классе Dog метод speak() должен выводить на экран: "{name} says Woof!" (вместо {name} подставь имя собаки).
 # В классе Cat метод speak() должен выводить на экран: "{name} says Meow!".
+import math
+
 
 class Animal:
     def __init__(self, name):
@@ -92,3 +94,30 @@ class DiscountedProduct(Product):
         self.discount = discount
     def get_price(self):
         return super().get_price() * (100-self.discount)/100
+
+# Задача 5
+#
+# Создай базовый класс Shape (Геометрическая фигура).
+# В нем определи метод area() (площадь), который просто возвращает 0.
+# Затем создай два дочерних класса: Square (Квадрат) и Circle (Круг).
+# Класс Square должен принимать в __init__ длину стороны side и сохранять её. Переопредели метод area() так, чтобы он возвращал площадь квадрата.
+# Класс Circle должен принимать в __init__ радиус radius. Переопредели метод area() так, чтобы он возвращал площадь круга (число π можно взять равным 3.14).
+# Создай по одному экземпляру каждого класса (с произвольными размерами) и выведи результат вызова метода area() для каждого из них.
+import math
+class Shape:
+    def area(self):
+        return 0
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+    def area(self):
+        return self.side**2
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return math.pi*self.radius**2
+side_1 = Square(side=1)
+circle_1 = Circle(radius=1)
+print(side_1.area())
+print(circle_1.area())
