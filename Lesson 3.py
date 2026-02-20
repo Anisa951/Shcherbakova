@@ -211,3 +211,48 @@ two_cities = cities[:2]
 print(cities)
 print(two_cities)
 print(len(cities))
+
+# Задача №13 (простая версия): Базовые операции со списками
+# Создайте список: numbers = [1, 2, 3, 4, 5].
+# Выведите на экран первый элемент списка.
+# Выведите на экран последний элемент списка, используя отрицательный индекс.
+# Добавьте в конец списка число 6.
+# Вставьте число 10 на позицию с индексом 2.
+# Удалите число 3 из списка по значению.
+# Выведите итоговый список numbers и его длину.
+# Напишите ваш код.
+
+numbers = [1, 2, 3, 4, 5]
+print(numbers[0])
+print(numbers[-1])
+numbers.append(6)
+numbers.insert(2,10)
+numbers.remove(3)
+print(numbers, len(numbers))
+
+# Задача №14: Работа со срезами и копированием
+# Создайте список: letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+# Используя срез, создайте новый список first_three, содержащий первые три элемента.
+# Используя срез, создайте новый список last_two, содержащий последние два элемента.
+# Используя срез, создайте новый список middle, содержащий элементы с индекса 2 по индекс 4 (включительно).
+# Создайте полную копию списка letters с помощью среза и назовите её letters_copy.
+# Измените первый элемент в списке letters_copy на 'X'.
+# Выведите на экран:
+# Исходный список letters
+# Список first_three
+# Список last_two
+# Список middle
+# Изменённый список letters_copy
+# Напишите ваш код.
+
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+first_three = letters[:3]
+last_two = letters[-2:]
+middle = letters[2:5]
+letters_copy = letters.copy()
+letters_copy[0] = "Х"
+print(letters)
+print(first_three)
+print(last_two)
+print(middle)
+print(letters_copy)
